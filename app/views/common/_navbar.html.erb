@@ -30,13 +30,18 @@
         -->
 
         <!--搜索栏-->
-        <form class="navbar-form navbar-left" action="/products/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+        <form class="navbar-form navbar-left" action="/products/search" accept-charset="UTF-8" method="get">
+          <%= form_tag search_products_path , :method => :get do %>
+          <input name="utf8" type="hidden" value="✓">
           <div class="input-group search-box">
             <input type="text" name="keyword" class="form-control" placeholder="搜寻好物..." value="">
             <div class="input-group-btn">
-              <button class="btn btn-default" type="submit" ><span><i class="fa fa-search"></i></span>开始</button>
+              <button class="btn btn-default" type="submit" >
+                <span><i class="fa fa-search"></i></span>开始
+              </button>
             </div>
           </div>
+          <% end %>
         </form>
 
         <ul class="nav navbar-nav navbar-right">
